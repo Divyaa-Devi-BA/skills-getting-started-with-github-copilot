@@ -53,6 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
           participants.forEach((email) => {
             const participant = document.createElement("li");
+            const participantRow = document.createElement("div");
+            participantRow.className = "participant-row";
+
             const participantEmail = document.createElement("span");
             participantEmail.className = "participant-email";
             participantEmail.textContent = email;
@@ -86,7 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
               }
             });
 
-            participant.append(participantEmail, removeButton);
+            participantRow.append(participantEmail, removeButton);
+            participant.appendChild(participantRow);
             participantList.appendChild(participant);
           });
 
